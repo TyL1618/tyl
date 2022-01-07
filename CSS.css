@@ -87,6 +87,16 @@ p {
 	float:center;
 }
 
+#DIV3{
+	text-align: center;
+	width:200px;
+	line-height:5px;
+	padding:15px 0px;
+	border:0px green solid;
+	margin-left: -200px;
+	float:right;
+}
+
 canvas { 
 	background: gray; 
 }
