@@ -35,12 +35,17 @@ function renew(index)
 	*/
 	-->
 	document.getElementById("professorcheck").style.display = "none";
-	document.getElementById("infocheck").style.display = "none";
-	document.getElementById("papercheck").style.display = "none";
+	document.getElementById("schoolcheck").style.display    = "none";
+	document.getElementById("infocheck").style.display      = "none";
+	document.getElementById("papercheck").style.display     = "none";
 	
 	if(index==1)
 	{
 		document.getElementById("professorcheck").style.display = "block";
+	}
+	else if(index==2)
+	{
+		document.getElementById("schoolcheck").style.display = "block";
 	}
 	else if(index==3)
 	{
@@ -53,6 +58,9 @@ function renew(index)
 	else
 	{
 		document.getElementById("professorcheck").style.display = "none";
+		document.getElementById("infocheck").style.display      = "none";
+		document.getElementById("papercheck").style.display     = "none";
+		document.getElementById("schoolcheck").style.display    = "none";
 	}
 }
 </script>
@@ -120,7 +128,20 @@ function renew(index)
 				  </tr>
 				</table>
 			</div>
-			
+
+			<div id="schoolcheck" style="display: none;">
+				<table class="center">
+				  <tr>
+					<th><p>學校名稱</p></th>
+					<th><p>所在位置</p></th>
+				  </tr>
+				  <tr>
+					<th><input name="School"   id="School"   type="text" placeholder="(ex.中興)"   size="14" value=""></th>
+					<th><input name="Address"  id="Address"  type="text" placeholder="(ex.臺中)" size="14" value=""></th>
+				  </tr>
+				</table>
+			</div>
+
 			<div id="papercheck" style="display: none;">
 				<table class="center">
 				  <tr>
@@ -135,6 +156,8 @@ function renew(index)
 				  </tr>
 				</table>
 			</div>
+
+
 		</div>
 	</tr>
 </form>
@@ -233,6 +256,26 @@ function renew(index)
 		{
 			dep3 = "C like '%%'";
 		}
+		console.log(document.getElementById("myForm").School);
+		var sch = document.getElementById("myForm").School.value;
+		if(sch != '')
+		{
+			sch = "C like '%" + sch + "%'";
+		}
+		else
+		{
+			sch = "C like '%%'";
+		}
+		console.log(document.getElementById("myForm").Address);
+		var add = document.getElementById("myForm").Address.value;
+		if(add != '')
+		{
+			add = "E like '%" + add + "%'";
+		}
+		else
+		{
+			add = "E like '%%'";
+		}
 		
 		var durl = 'https://docs.google.com/spreadsheets/d/14EmAtA2MFDr34XSFIAOMbpnLwtBDqIs6XixaNSFO9JM' ;//我們試算表的網址
 		var gid = {'論文':'829588965', //試算表下面可切換標籤頁的固有編號 
@@ -257,7 +300,7 @@ function renew(index)
 			else if(stru == 'school')
 			{
 				var temp2 = "C like '%" + stru2 + "%'";
-				var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + temp2;
+				var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + sch + ' and ' + add + ' and ' + temp2;
 				document.open(`${durl}/gviz/tq?gid=${gid['地址']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
 			}
 			else if(stru == 'paper')
@@ -275,7 +318,7 @@ function renew(index)
 		}
 		else
 		{
-			var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2;
+			var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + add + ' and ' + sch;
 			if(stru == 'teach')
 			{
 				document.open(`${durl}/gviz/tq?gid=${gid['教授']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
@@ -301,6 +344,8 @@ function renew(index)
 		document.getElementById("myForm").Paper.value    = '';
 		document.getElementById("myForm").Depart3.value  = '';
 		document.getElementById("myForm").ProName2.value = '';
+		document.getElementById("myForm").School.value   = '';
+		document.getElementById("myForm").Address.value  = '';
 	}
 </script>
 
