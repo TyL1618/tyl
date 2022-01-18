@@ -298,7 +298,7 @@ function renew(index)
 			{
 				var temp1 = "A like '%" + stru2 + "%'";
 				var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + temp1;
-				tq += ' label A "指導教授", B "校院名稱", C "單位名稱", D "學術專長", E "論文名稱", F "URI"';
+				tq += ' label A "學校名稱",B "單位名稱",C "教師姓名",D "學術專長",E "網址"';
 				document.open(`${durl}/gviz/tq?gid=${gid['教授']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
 			}
 			else if(stru == 'school')
