@@ -25,7 +25,7 @@
 department=new Array();
 department[0]=[];
 department[1]=["臺灣大學", "清華大學", "陽交大學", "成功大學", "中央大學", "中興大學", "中山大學", "中正大學"];
-department[2]=["臺灣大學", "清華大學", "陽交大學", "成功大學", "中央大學", "中興大學", "中山大學", "中正大學"];	
+department[2]=["臺灣大學", "清華大學", "陽交大學", "成功大學", "中央大學", "中興大學", "中山大學", "中正大學"];
 department[3]=["臺灣大學", "清華大學", "陽交大學", "成功大學", "中央大學", "中興大學", "中山大學", "中正大學"];
 */
 function renew(index)
@@ -40,7 +40,7 @@ function renew(index)
 	document.getElementById("infocheck").style.display      = "none";
 	document.getElementById("papercheck").style.display     = "none";
 	second.style.display = '';
-	
+
 	if(index==1)
 	{
 		document.getElementById("professorcheck").style.display = "block";
@@ -71,11 +71,11 @@ function renew(index)
 
 <div id="DIV1">
 	<h3><font color="yellow">小遊戲</font></h3>
-	<button type="button"  onclick="window.open('https://tyl1618.github.io/tyl/game/bricks.html', '_blank')">復古打磚塊</button>
+	<button type="button"  onclick="window.open('./game/bricks.html', '_blank')">復古打磚塊</button>
 	<br><br><br><br>
-	<button type="button"  onclick="window.open('https://tyl1618.github.io/tyl/game/tetris.html', '_blank')">俄羅斯方塊</button>
+	<button type="button"  onclick="window.open('./game/tetris.html', '_blank')">俄羅斯方塊</button>
 	<br><br><br><br>
-	<button type="button"  onclick="window.open('https://tyl1618.github.io/tyl/game/bomb.html', '_blank')">老王爆爆王</button>
+	<button type="button"  onclick="window.open('./game/bomb.html', '_blank')">老王爆爆王</button>
 	<br><br><br><br>
 </div>
 
@@ -103,7 +103,7 @@ function renew(index)
 				<option id="NSYSU" value='中山大學'   >國立中山大學</option>
 				<option id="CCU"   value='中正大學'   >國立中正大學</option>
 			</select>
-			
+
 			<div id="professorcheck" style="display: none;">
 				<table class="center">
 				  <tr>
@@ -172,7 +172,7 @@ function renew(index)
 <script>
 	function rick()
 	{
-		document.open('https://tyl1618.github.io/tyl/frame','', 'noopener=true')
+		document.open('./frame','', 'noopener=true')
 	}
 </script>
 
@@ -279,51 +279,45 @@ function renew(index)
 		{
 			add = "E like '%%'";
 		}
-		
+
 		var durl = 'https://docs.google.com/spreadsheets/d/14EmAtA2MFDr34XSFIAOMbpnLwtBDqIs6XixaNSFO9JM' ;//我們試算表的網址
-		var gid = {'論文':'829588965', //試算表下面可切換標籤頁的固有編號 
+		var gid = {'論文':'829588965', //試算表下面可切換標籤頁的固有編號
 				   '教授':'1138920504',
 				   '地址':'58835050',
 				   '排名':'217704505',
 				   '學校':'1358831441'};
-				   
+
 		var e = document.getElementById("first");
 		var stru = e.value;
 		var e2 = document.getElementById("second");
 		var stru2 = e2.value;
-		
+		var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2;
 		if(stru2 != 'ALL')
 		{
 			if(stru == 'teach')
 			{
-				var temp1 = "A like '%" + stru2 + "%'";
-				var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + temp1;
-				tq += ' label A "學校名稱",B "單位名稱",C "教師姓名",D "學術專長",E "網址"';
+				tq += ' and ' + "A like '%" + stru2 + "%'" + ' label A "學校名稱",B "單位名稱",C "教師姓名",D "學術專長",E "網址"';
 				document.open(`${durl}/gviz/tq?gid=${gid['教授']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
 			}
 			else if(stru == 'school')
 			{
-				var temp2 = "C like '%" + stru2 + "%'";
-				var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + sch + ' and ' + add + ' and ' + temp2;
+				tq += ' and ' + sch + ' and ' + add + ' and ' + "C like '%" + stru2 + "%'";
 				document.open(`${durl}/gviz/tq?gid=${gid['地址']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
 			}
 			else if(stru == 'paper')
 			{
-				var temp3 = "B like '%" + stru2 + "%'";
-				var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + temp3;
-				tq+=' label A "指導教授",B "校院名稱",C "單位名稱",D "學術專長",E "論文名稱",F "URI"';
+				tq += ' and ' + "B like '%" + stru2 + "%'" + ' label A "指導教授",B "校院名稱",C "單位名稱",D "學術專長",E "論文名稱",F "URI"';
 				document.open(`${durl}/gviz/tq?gid=${gid['論文']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
 			}
 			else if(stru == 'info')
 			{
-				var temp4 = "A like '%" + stru2 + "%'";
-				var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + temp4;
+				tq += ' and ' + "A like '%" + stru2 + "%'";
 				document.open(`${durl}/gviz/tq?gid=${gid['學校']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
 			}
 		}
 		else
 		{
-			var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + add + ' and ' + sch;
+			tq += ' and ' + add + ' and ' + sch;
 			if(stru == 'teach')
 			{
 				tq += ' label A "學校名稱",B "單位名稱",C "教師姓名",D "學術專長",E "網址"';
@@ -335,7 +329,7 @@ function renew(index)
 			}
 			else if(stru == 'paper')
 			{
-				tq+=' label A "指導教授",B "校院名稱",C "單位名稱",D "學術專長",E "論文名稱",F "URI"';
+				tq += ' label A "指導教授",B "校院名稱",C "單位名稱",D "學術專長",E "論文名稱",F "URI"';
 				document.open(`${durl}/gviz/tq?gid=${gid['論文']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
 			}
 			else if(stru == 'info')
@@ -359,13 +353,13 @@ function renew(index)
 <div class="center">
 	<input type="button" value="搜尋" onclick="search()">
 </div>
-	
+
 
 <br>
 <br><br>
 <br>
 
-	
+
 <div class="center">
 	<input type="button" value="進階搜尋" onclick="rick()">
 </div>
