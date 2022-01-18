@@ -21,7 +21,6 @@
 <h2>臺灣研究所資料搜索系統</h2>
 
 <script>
-<!--
 /*
 department=new Array();
 department[0]=[];
@@ -29,16 +28,13 @@ department[1]=["臺灣大學", "清華大學", "陽交大學", "成功大學", "
 department[2]=["臺灣大學", "清華大學", "陽交大學", "成功大學", "中央大學", "中興大學", "中山大學", "中正大學"];	
 department[3]=["臺灣大學", "清華大學", "陽交大學", "成功大學", "中央大學", "中興大學", "中山大學", "中正大學"];
 */
--->
 function renew(index)
 {
-	<!--
 	/*
 	for(var i=0;i<department[index].length;i++)
 		document.myForm.second.options[i]=new Option(department[index][i], department[index][i]);
 	document.myForm.second.length=department[index].length;
 	*/
-	-->
 	document.getElementById("professorcheck").style.display = "none";
 	document.getElementById("schoolcheck").style.display    = "none";
 	document.getElementById("infocheck").style.display      = "none";
@@ -302,6 +298,7 @@ function renew(index)
 			{
 				var temp1 = "A like '%" + stru2 + "%'";
 				var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + temp1;
+				tq += ' label A "指導教授", B "校院名稱", C "單位名稱", D "學術專長", E "論文名稱", F "URI"';
 				document.open(`${durl}/gviz/tq?gid=${gid['教授']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
 			}
 			else if(stru == 'school')
@@ -314,6 +311,7 @@ function renew(index)
 			{
 				var temp3 = "B like '%" + stru2 + "%'";
 				var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + temp3;
+				tq+=' label A "指導教授",B "校院名稱",C "單位名稱",D "學術專長",E "論文名稱",F "URI"';
 				document.open(`${durl}/gviz/tq?gid=${gid['論文']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
 			}
 			else if(stru == 'info')
@@ -328,6 +326,7 @@ function renew(index)
 			var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2 + ' and ' + add + ' and ' + sch;
 			if(stru == 'teach')
 			{
+				tq += ' label A "學校名稱",B "單位名稱",C "教師姓名",D "學術專長",E "網址"';
 				document.open(`${durl}/gviz/tq?gid=${gid['教授']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
 			}
 			else if(stru == 'school')
@@ -336,6 +335,7 @@ function renew(index)
 			}
 			else if(stru == 'paper')
 			{
+				tq+=' label A "指導教授",B "校院名稱",C "單位名稱",D "學術專長",E "論文名稱",F "URI"';
 				document.open(`${durl}/gviz/tq?gid=${gid['論文']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
 			}
 			else if(stru == 'info')
