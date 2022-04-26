@@ -622,10 +622,10 @@ function generateAnswerPage()
 	}
 
 	//print input key
-	$("#oK").empty();
+	$("#originalKey").empty();
 	for (i = 0; i < 10; i++)
 	{
-		$("#oK").append("<td>" + printObject.key[i] + "</td>");
+		$("#originalKey").append("<td>" + printObject.key[i] + "</td>");
 	}
 
 	//print input key
