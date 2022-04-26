@@ -11,21 +11,21 @@
 	</head>
 
 	<body>
+	<h1>網路安全導論 S-DES加解密</h1>
 	<div class="center">
-		<h1>網路安全導論 S-DES加解密</h1>
+		<form id="form" onsubmit="return false;"><font size="4" color="#90EE90">
+		  8-bit binary message or cipher text to encrypt or decrypt:</font><br>
+		  <input type="text" id="inputText"  maxlength="8">
+		  <br><font size="4" color="#90EE90">
+		  10-bit binary key:</font><br>
+		  <input type="text" id="inputKey"  maxlength="10"><br><br>
+		  <input type="radio" id="startMeChecked" name="encryptFlag" value="encrypt" checked onclick="setEncryptFlag(true);"><font size="4" color="#90EE90"> Encrypt </font>
+		  <input type="radio" name="encryptFlag" value="decrypt" onclick="setEncryptFlag(false);"><font size="4" color="#90EE90"> Decrypt </font>
+		  <br><br>
+		  <input type="submit" value="SUBMIT" onclick="inputHandler();">
+		  <input type="reset">
+		</form>
 	</div>
-    <form id="form" onsubmit="return false;">
-      8-bit binary message or cipher text to encrypt or decrypt:<br>
-      <input type="text" id="inputText"  maxlength="8">
-      <br>
-      10-bit binary key:<br>
-      <input type="text" id="inputKey"  maxlength="10"><br><br>
-      <input type="radio" id="startMeChecked" name="encryptFlag" value="encrypt" checked onclick="setEncryptFlag(true);"> Encrypt
-      <input type="radio" name="encryptFlag" value="decrypt" onclick="setEncryptFlag(false);"> Decrypt
-      <br><br>
-      <input type="submit" value="SUBMIT" onclick="inputHandler();">
-      <input type="reset">
-    </form>
     <div id="inputError" style="display:none">There was an error with the input. Please re-enter</div>
 
     <div id="TESTING"></div>
@@ -34,10 +34,10 @@
     <hr class="mainDivider">
     
 
-    <div id="detailedOutput">
+    <div id="detailedOutput" align="center">
       <h2>Start the S-DES algorithim.</h2>
       <h3>Input</h3>
-      <table>
+      <table >
         <body>
           <tr id="originalText">
           </tr>
