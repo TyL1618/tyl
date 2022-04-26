@@ -1,45 +1,3 @@
-
-var encryptFlag = true;
-
-var printObject = {
-	text:[],
-	key:[],
-	afterP10Key:[],
-	afterFirstSplitLeft:[],
-	afterFirstSplitRight:[],
-	afterLeftLS1:[],
-	afterRightLS1:[],
-	subKeyK1:[],
-	afterLeftLS2:[],
-	afterRightLS2:[],
-	subKeyK2:[],
-	afterIP:[],
-	afterIPSplitLeft:[],
-	afterIPSplitRight:[],
-	afterEPRound1:[],
-	afterXORK1:[],
-	afterXORK1SplitLeft:[],
-	afterXORK1SplitRight:[],
-	afterS0Round1:[],
-	afterS1Round1:[],
-	afterP4Round1:[],
-	afterFinalXORRound1:[],
-	resultOfRoundFunctionFK1:[],
-	afterSwitch:[],
-	afterSwitchSplitLeft:[],
-	afterSwitchSplitRight:[],
-	afterEPRound2:[],
-	afterXORK2:[],
-	afterXORK2SplitLeft:[],
-	afterXORK2SplitRight:[],
-	afterS0Round2:[],
-	afterS1Round2:[],
-	afterP4Round2:[],
-	afterFinalXORRound2:[],
-	resultOfRoundFunctionFK2:[],
-	finalResult:[]
-};
-
 function LS1(s){
   temp = "";
 
@@ -919,3 +877,44 @@ function generateAnswerPage()
 		$("#finalResult").append("<td>" + printObject.finalResult[i] + "</td>");
 	}
 }
+
+var encryptFlag = true;
+
+var printObject = {
+	text:[],
+	key:[],
+	afterP10Key:[],
+	afterFirstSplitLeft:[],
+	afterFirstSplitRight:[],
+	afterLeftLS1:[],
+	afterRightLS1:[],
+	subKeyK1:[],
+	afterLeftLS2:[],
+	afterRightLS2:[],
+	subKeyK2:[],
+	afterIP:[],
+	afterIPSplitLeft:[],
+	afterIPSplitRight:[],
+	afterEPRound1:[],
+	afterXORK1:[],
+	afterXORK1SplitLeft:[],
+	afterXORK1SplitRight:[],
+	afterS0Round1:[],
+	afterS1Round1:[],
+	afterP4Round1:[],
+	afterFinalXORRound1:[],
+	resultOfRoundFunctionFK1:[],
+	afterSwitch:[],
+	afterSwitchSplitLeft:[],
+	afterSwitchSplitRight:[],
+	afterEPRound2:[],
+	afterXORK2:[],
+	afterXORK2SplitLeft:[],
+	afterXORK2SplitRight:[],
+	afterS0Round2:[],
+	afterS1Round2:[],
+	afterP4Round2:[],
+	afterFinalXORRound2:[],
+	resultOfRoundFunctionFK2:[],
+	finalResult:[]
+};
