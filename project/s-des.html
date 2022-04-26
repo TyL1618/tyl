@@ -1,24 +1,19 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
+	<head>
+		<link rel="stylesheet" href="CSS.css">
+		<meta charset="UTF-8">
+		<title>S-DES加解密</title>
+		<!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+		<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="./S_DES_.js"></script>
+	</head>
 
-
-
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="./permutations.js"></script>
-  </head>
-
-
-
-
-  <body>
-  	<h1>Simplified DES (S-DES) Calculator</h1>
-
+	<body>
+	<div class="center">
+		<h1>網路安全導論 S-DES加解密</h1>
+	</div>
     <form id="form" onsubmit="return false;">
       8-bit binary message or cipher text to encrypt or decrypt:<br>
       <input type="text" id="inputText"  maxlength="8">
@@ -455,13 +450,5 @@
       encryptFlag = true;
     </script>
 
-
-
-
-
   </body>
-
-
-
-
 </html>

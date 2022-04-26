@@ -40,8 +40,77 @@ var printObject = {
 	finalResult:[]
 };
 
+function LS1(s){
+  temp = "";
 
+  //left part
+  for(i = 1; i < 5; ++i)
+    temp += s[i];
+  temp += s[0]  ;
 
+  //right part
+  for(i = 6; i < 10; ++i)
+    temp += s[i];
+  temp += s[9];
+
+  return temp;
+}
+
+function LS2(s){
+  temp = "";
+
+ //left part
+  for(i = 2; i < 5; ++i)
+    temp += s[i];
+  temp += s[0];
+  temp += s[1];
+
+  //right part
+  for(i = 7; i < 10; ++i)
+    temp += s[i];
+  temp += s[5];
+  temp += s[6];
+
+  return temp;
+}
+function IP(s){
+  temp = "";
+  temp += s[1];
+  temp += s[5];
+  temp += s[2];
+  temp += s[0];
+  temp += s[3];
+  temp += s[7];
+  temp += s[4];
+  temp += s[6];
+  return temp;
+}
+ 
+function IP_inv(s){
+  temp = "";
+  temp += s[3];
+  temp += s[0];
+  temp += s[2];
+  temp += s[4];
+  temp += s[6];
+  temp += s[1];
+  temp += s[7];
+  temp += s[5];
+  return temp;
+}
+
+function EP(s){
+  temp = "";
+  temp += s[3]; //4
+  for(i = 0; i < 3; ++i) //123
+    temp += s[i];
+    
+  for(i = 1; i < 4; ++i) //234
+    temp += s[i];
+  temp += s[0]; //1
+
+  return temp;
+}
 
 
 function p10(inputKey)
@@ -283,19 +352,6 @@ function switchFunction(leftString, rightString)
 	};
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 function sdesKeyGenerator(inputKey)
 {
 	var inputKeyLength = 10;
@@ -355,15 +411,6 @@ function sdesKeyGenerator(inputKey)
 		k2:outputKey2
 	};
 }
-
-
-
-
-
-
-
-
-
 
 function mappingFunction(inputString, key, currentRoundNumber)
 {
@@ -547,14 +594,7 @@ function sdes(inputText, key)
 
 	return outputText;
 }
-
-
-
-
-
-
-
-
+//-------------------------------------------------------------------------------------------------------------
 function setEncryptFlag(flag)
 {
 	encryptFlag = flag;
