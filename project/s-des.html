@@ -14,13 +14,13 @@
 	<h1>網路安全導論 S-DES加解密</h1>
 	<div class="center">
 		<form id="form" onsubmit="return false;"><font size="4" color="#90EE90">
-		  8-bit binary message or cipher text to encrypt or decrypt:</font><br>
+		  請輸入8-bit的二進制訊息進行加密或解密:</font><br>
 		  <input type="text" id="inputText"  maxlength="8">
 		  <br><font size="4" color="#90EE90">
-		  10-bit binary key:</font><br>
+		  請輸入10-bit的key:</font><br>
 		  <input type="text" id="inputKey"  maxlength="10"><br><br>
-		  <input type="radio" id="startMeChecked" name="encryptFlag" value="encrypt" checked onclick="setEncryptFlag(true);"><font size="4" color="#90EE90"> Encrypt </font>
-		  <input type="radio" name="encryptFlag" value="decrypt" onclick="setEncryptFlag(false);"><font size="4" color="#90EE90"> Decrypt </font>
+		  <input type="radio" id="startMeChecked" name="encryptFlag" value="encrypt" checked onclick="setEncryptFlag(true);"><font size="4" color="#90EE90"> 加密 Encrypt </font>
+		  <input type="radio" name="encryptFlag" value="decrypt" onclick="setEncryptFlag(false);"><font size="4" color="#90EE90"> 解密 Decrypt </font>
 		  <br><br>
 		  <input type="submit" value="SUBMIT" onclick="inputHandler();">
 		  <input type="reset">
