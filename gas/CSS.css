@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
 body {
 	background-color: black;
 }
@@ -44,6 +44,10 @@ p {
 	margin-right: auto;
 }
 
+.left {
+	margin: 0;
+	padding: 0;
+}
 
 
 #DIV1{
@@ -94,8 +98,17 @@ header::after {
 }
 
 .logo {
-  float: left;
-  padding: 10px 0;
+	float: left;
+  	height: 60px;
+	width: 160px;
+	padding: 10px 0;
+}
+
+img{
+	width: auto;
+	height: auto;
+    max-width:50%;
+    max-height: 50%;
 }
 
 nav {
@@ -120,7 +133,7 @@ nav a {
   color: #444;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 25px;
 }
 
 nav a:hover {

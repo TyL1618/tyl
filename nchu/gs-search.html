@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TyL_1.618</title>
+		<link rel="stylesheet" href="CSS.css">
+	</head>
+	<header>
+		<div class="container">
+			<img src="./tyl.png" class="logo"></img>
+			<nav>
+				<ul>
+				<li><a href="https://tyl1618.github.io/index/">Home</a></li>
+				<li><a href="https://tyl1618.github.io/about/">About</a></li>
+				<li><a href="https://tyl1618.github.io/nchu/">NCHU</a></li>
+				<li><a href="https://tyl1618.github.io/contact/">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<body>
+	<h1>NCHU CSE DataBase Final Project</h1>
+	<h2>臺灣研究所資料搜索系統</h2>
+	<script>
+		function renew(index)
+		{
+			document.getElementById("professorcheck").style.display = "none";
+			document.getElementById("schoolcheck").style.display    = "none";
+			document.getElementById("infocheck").style.display      = "none";
+			document.getElementById("papercheck").style.display     = "none";
+			second.style.display = '';
+
+			if(index==1)
+			{
+				document.getElementById("professorcheck").style.display = "block";
+			}
+			else if(index==2)
+			{
+				document.getElementById("schoolcheck").style.display = "block";
+				second.style.display = 'none';
+			}
+			else if(index==3)
+			{
+				document.getElementById("infocheck").style.display = "block";
+			}
+			else if(index==4)
+			{
+				document.getElementById("papercheck").style.display = "block";
+			}
+			else
+			{
+				document.getElementById("professorcheck").style.display = "none";
+				document.getElementById("infocheck").style.display      = "none";
+				document.getElementById("papercheck").style.display     = "none";
+				document.getElementById("schoolcheck").style.display    = "none";
+			}
+		}
+	</script>
+
+
+	<div id="DIV1">
+		<h3><font color="yellow">小遊戲</font></h3>
+		<button type="button"  onclick="window.open('./game/bricks.html', '_blank')">復古打磚塊</button>
+		<br><br><br><br>
+		<button type="button"  onclick="window.open('./game/tetris.html', '_blank')">俄羅斯方塊</button>
+		<br><br><br><br>
+		<button type="button"  onclick="window.open('./game/bomb.html', '_blank')">老王爆爆王</button>
+		<br><br><br><br>
+	</div>
+
+	<div id="DIV2">
+		<h3><font color="yellow">其他功能</font></h3>
+		<button type="button"  onclick="window.open('./project/s-des.html', '_blank')">S-DES加解密</button>
+		<br><br><br><br>
+		<button type="button"  onclick="window.open('./gas/score.html', '_blank')">Google App Script 成績計算</button>
+		<br><br><br><br>
+	</div>
+
+
+
+	<form name="myForm" id="myForm">
+		<tr>
+			<div class="center">
+				<select id="first" name="first" onChange="renew(this.selectedIndex);">
+					<option value='select' selected disabled>選擇資訊</option>
+					<option id="teach"  value='teach' >師資資訊</option>
+					<option id="school" value='school'>學校資訊</option>
+					<option id="info"   value='info'  >報考資訊</option>
+					<option id="paper"  value='paper' >論文資訊</option>
+				</select>
+				<select id="second" name="second">
+					<option id="ALL"   value='ALL'        >  不分學校  </option>
+					<option id="NTU"   value='臺灣大學'   >國立臺灣大學</option>
+					<option id="NCTU"  value='交通大學'   >國立交通大學</option>
+					<option id="NTHU"  value='清華大學'   >國立清華大學</option>
+					<option id="NCKU"  value='成功大學'   >國立成功大學</option>
+					<option id="NCU"   value='中央大學'   >國立中央大學</option>
+					<option id="NCHU"  value='中興大學'   >國立中興大學</option>
+					<option id="NSYSU" value='中山大學'   >國立中山大學</option>
+					<option id="CCU"   value='中正大學'   >國立中正大學</option>
+				</select>
+
+				<div id="professorcheck" style="display: none;">
+					<table class="center">
+					  <tr>
+						<th><p>教授名稱</p></th>
+						<th><p>學術專長</p></th>
+						<th><p>單位名稱</p></th>
+					  </tr>
+					  <tr>
+						<th><input name="ProName" id="ProName" type="text" placeholder="(ex.陳煥)"   size="14" value=""></th>
+						<th><input name="AcadeEx" id="AcadeEx" type="text" placeholder="(ex.人工智慧)" size="14" value=""></th>
+						<th><input name="Depart"  id="Depart"  type="text" placeholder="(ex.資訊工程)" size="14" value=""></th>
+					  </tr>
+					</table>
+				</div>
+
+				<div id="infocheck" style="display: none;">
+					<table class="center">
+					  <tr>
+						<th><p>學年度</p></th>
+						<th><p>單位名稱</p></th>
+					  </tr>
+					  <tr>
+						<th><input name="Year"    id="Year"   type="text" placeholder="(ex.109)"      size="14" value=""></th>
+						<th><input name="Depart2" id="Depart2"type="text" placeholder="(ex.資訊工程)" size="14" value=""></th>
+					  </tr>
+					</table>
+				</div>
+
+				<div id="schoolcheck" style="display: none;">
+					<table class="center">
+					  <tr>
+						<th><p>學校名稱</p></th>
+						<th><p>所在位置</p></th>
+					  </tr>
+					  <tr>
+						<th><input name="School"   id="School"   type="text" placeholder="(ex.中興)"   size="14" value=""></th>
+						<th><input name="Address"  id="Address"  type="text" placeholder="(ex.臺中)" size="14" value=""></th>
+					  </tr>
+					</table>
+				</div>
+
+				<div id="papercheck" style="display: none;">
+					<table class="center">
+					  <tr>
+						<th><p>教授名稱</p></th>
+						<th><p>論文名稱</p></th>
+						<th><p>單位名稱</p></th>
+					  </tr>
+					  <tr>
+						<th><input name="ProName2" id="ProName2"   type="text" placeholder="(ex.范耀中)"   size="14" value=""></th>
+						<th><input name="Paper"    id="Paper"      type="text" placeholder="(ex.網路安全)" size="14" value=""></th>
+						<th><input name="Depart3"  id="Depart3"    type="text" placeholder="(ex.資訊管理)" size="14" value=""></th>
+					  </tr>
+					</table>
+				</div>
+
+
+			</div>
+		</tr>
+	</form>
+
+
+	<br>
+	<br>
+
+	<script>
+		function rick()
+		{
+			document.open('./frame.html','', 'noopener=true')
+		}
+	</script>
+
+	<script language="javascript">
+		function search()
+		{
+			console.log(document.getElementById("myForm").ProName);
+			var pro = document.getElementById("myForm").ProName.value;
+			if(pro != '')
+			{
+				pro = "C like '%" + pro + "%'";
+			}
+			else
+			{
+				pro = "C like '%%'";
+			}
+			console.log(document.getElementById("myForm").AcadeEx);
+			var ex = document.getElementById("myForm").AcadeEx.value;
+			if(ex != '')
+			{
+				ex = "D like '%" + ex + "%'";
+			}
+			else
+			{
+				ex = "D like '%%'";
+			}
+			console.log(document.getElementById("myForm").Depart);
+			var dep = document.getElementById("myForm").Depart.value;
+			if(dep != '')
+			{
+				dep = "B like '%" + dep + "%'";
+			}
+			else
+			{
+				dep = "B like '%%'";
+			}
+			console.log(document.getElementById("myForm").Depart2);
+			var dep2 = document.getElementById("myForm").Depart2.value;
+			if(dep2 != '')
+			{
+				dep2 = "B like '%" + dep2 + "%'";
+			}
+			else
+			{
+				dep2 = "B like '%%'";
+			}
+			console.log(document.getElementById("myForm").Year);
+			var year = document.getElementById("myForm").Year.value;
+			if(year != '')
+			{
+				year = "D like '%" + year + "%'";
+			}
+			else
+			{
+				year = "D like '%%'";
+			}
+			console.log(document.getElementById("myForm").ProName2);
+			var pro2 = document.getElementById("myForm").ProName2.value;
+			if(pro2 != '')
+			{
+				pro2 = "A like '%" + pro2 + "%'";
+			}
+			else
+			{
+				pro2 = "A like '%%'";
+			}
+			console.log(document.getElementById("myForm").Paper);
+			var pap = document.getElementById("myForm").Paper.value;
+			if(pap != '')
+			{
+				pap = "E like '%" + pap + "%'";
+			}
+			else
+			{
+				pap = "E like '%%'";
+			}
+			console.log(document.getElementById("myForm").Depart3);
+			var dep3 = document.getElementById("myForm").Depart3.value;
+			if(dep3 != '')
+			{
+				dep3 = "C like '%" + dep3 + "%'";
+			}
+			else
+			{
+				dep3 = "C like '%%'";
+			}
+			console.log(document.getElementById("myForm").School);
+			var sch = document.getElementById("myForm").School.value;
+			if(sch != '')
+			{
+				sch = "C like '%" + sch + "%'";
+			}
+			else
+			{
+				sch = "C like '%%'";
+			}
+			console.log(document.getElementById("myForm").Address);
+			var add = document.getElementById("myForm").Address.value;
+			if(add != '')
+			{
+				add = "E like '%" + add + "%'";
+			}
+			else
+			{
+				add = "E like '%%'";
+			}
+
+			var durl = 'https://docs.google.com/spreadsheets/d/14EmAtA2MFDr34XSFIAOMbpnLwtBDqIs6XixaNSFO9JM' ;//我們試算表的網址
+			var gid = {'論文':'829588965', //試算表下面可切換標籤頁的固有編號
+					   '教授':'1138920504',
+					   '地址':'58835050',
+					   '排名':'217704505',
+					   '學校':'1358831441'};
+
+			var e = document.getElementById("first");
+			var stru = e.value;
+			var e2 = document.getElementById("second");
+			var stru2 = e2.value;
+			var tq = 'select * where ' + pro + ' and ' + ex + ' and ' + dep + ' and ' + dep2 + ' and ' + year + ' and ' + dep3 + ' and ' + pap + ' and ' + pro2;
+			if(stru2 != 'ALL')
+			{
+				if(stru == 'teach')
+				{
+					tq += ' and ' + "A like '%" + stru2 + "%'" + ' label A "學校名稱",B "單位名稱",C "教師姓名",D "學術專長",E "網址"';
+					document.open(`${durl}/gviz/tq?gid=${gid['教授']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
+				}
+				else if(stru == 'school')
+				{
+					tq += ' and ' + sch + ' and ' + add + ' and ' + "C like '%" + stru2 + "%'";
+					document.open(`${durl}/gviz/tq?gid=${gid['地址']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
+				}
+				else if(stru == 'paper')
+				{
+					tq += ' and ' + "B like '%" + stru2 + "%'" + ' label A "指導教授",B "校院名稱",C "單位名稱",D "學術專長",E "論文名稱",F "URI"';
+					document.open(`${durl}/gviz/tq?gid=${gid['論文']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
+				}
+				else if(stru == 'info')
+				{
+					tq += ' and ' + "A like '%" + stru2 + "%'";
+					document.open(`${durl}/gviz/tq?gid=${gid['學校']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
+				}
+			}
+			else
+			{
+				tq += ' and ' + add + ' and ' + sch;
+				if(stru == 'teach')
+				{
+					tq += ' label A "學校名稱",B "單位名稱",C "教師姓名",D "學術專長",E "網址"';
+					document.open(`${durl}/gviz/tq?gid=${gid['教授']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
+				}
+				else if(stru == 'school')
+				{
+					document.open(`${durl}/gviz/tq?gid=${gid['地址']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
+				}
+				else if(stru == 'paper')
+				{
+					tq += ' label A "指導教授",B "校院名稱",C "單位名稱",D "學術專長",E "論文名稱",F "URI"';
+					document.open(`${durl}/gviz/tq?gid=${gid['論文']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
+				}
+				else if(stru == 'info')
+				{
+					document.open(`${durl}/gviz/tq?gid=${gid['學校']}&tqx=out:html&tq=${encodeURIComponent(tq)}`,'', 'noopener=true')
+				}
+			}
+			document.getElementById("myForm").ProName.value  = '';
+			document.getElementById("myForm").AcadeEx.value  = '';
+			document.getElementById("myForm").Depart.value   = '';
+			document.getElementById("myForm").Depart2.value  = '';
+			document.getElementById("myForm").Year.value     = '';
+			document.getElementById("myForm").Paper.value    = '';
+			document.getElementById("myForm").Depart3.value  = '';
+			document.getElementById("myForm").ProName2.value = '';
+			document.getElementById("myForm").School.value   = '';
+			document.getElementById("myForm").Address.value  = '';
+			e2.selectedIndex = 0;
+		}
+	</script>
+
+	<div class="center">
+		<input type="button" value="搜尋" onclick="search()">
+	</div>
+
+
+	<br>
+	<br><br>
+	<br>
+
+
+	<div class="center">
+		<input type="button" value="進階搜尋" onclick="rick()">
+	</div>
+
+
+
+
+	<br>
+	<br><br>
+	<br><br><br>
+	<br><br>
+	<br>
+
+
+	</body>
+</html>

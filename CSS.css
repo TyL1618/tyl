@@ -44,6 +44,10 @@ p {
 	margin-right: auto;
 }
 
+.left {
+	margin: 0;
+	padding: 0;
+}
 
 
 #DIV1{
@@ -94,8 +98,18 @@ header::after {
 }
 
 .logo {
-  float: left;
-  padding: 10px 0;
+	float: left;
+  	height: 60px;
+	width: 190px;
+	padding: 10px 0;
+	margin-left: -10%;
+}
+
+img{
+	width: auto;
+	height: auto;
+    max-width:50%;
+    max-height: 50%;
 }
 
 nav {
@@ -120,7 +134,7 @@ nav a {
   color: #444;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 25px;
 }
 
 nav a:hover {
@@ -142,4 +156,10 @@ nav a::before {
 
 nav a:hover::before {
   width: 100%;
+}
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
 }
