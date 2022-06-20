@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
 body {
 	background-color: black;
 }
 
-txt {
-	color: green;
+
+html {
+   height: 100 % ;
 }
 
-a {
-    color: yellow;
+txt {
+	color: green;
 }
 
 h1 {
@@ -16,26 +18,6 @@ h1 {
 }
 
 h2 {
-	text-align: center;
-	color: #90EE90;
-}
-
-h3 {
-	text-align: center;
-	color: #90EE90;
-}
-
-h4 {
-	text-align: center;
-	color: #90EE90;
-}
-
-h5 {
-	text-align: center;
-	color: #90EE90;
-}
-
-h6 {
 	text-align: center;
 	color: #90EE90;
 }
@@ -63,13 +45,13 @@ p {
 }
 
 
+
 #DIV1{
 	text-align: center;
 	width:100px;
 	line-height:5px;
 	padding:15px 0px;
 	border:1px green solid;
-	margin-right: -112px;
 	float:left;
 }
 
@@ -79,10 +61,85 @@ p {
 	line-height:5px;
 	padding:15px 0px;
 	border:1px green solid;
-	float:center;
+	float:right;
+}
+
+#DIV3{
+	text-align: center;
+	width:200px;
+	line-height:5px;
+	padding:15px 0px;
+	border:0px green solid;
+	margin-left: -200px;
+	float:right;
 }
 
 canvas { 
 	background: gray; 
 }
 
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+  background: #55d6aa;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+
+  position: relative;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
