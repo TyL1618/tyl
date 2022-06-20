@@ -1,0 +1,103 @@
+body {
+	background-color: black;
+}
+
+.body2 { 
+    background-image: url(https://c.tenor.com/_4YgA77ExHEAAAAC/rick-roll.gif); 
+    background-repeat: repeat; 
+    background-attachment: fixed;
+	min-height: 100vh;
+	height: 100 % ;
+}
+
+html {
+   height: 100 % ;
+}
+
+.body3 { 
+    background-image: url(https://c.tenor.com/_4YgA77ExHEAAAAC/rick-roll.gif);
+    position:absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    min-width: 1000px;
+    z-index:-10;
+    zoom: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
+}
+
+txt {
+	color: green;
+}
+
+h1 {
+	text-align: center;
+	color: #90EE90;
+}
+
+h2 {
+	text-align: center;
+	color: #90EE90;
+}
+
+td {
+	text-align: center;
+	color: #90EE90;
+}
+
+th {
+	text-align: center;
+	color: #90EE90;
+}
+
+p {
+	text-align: center;
+	color: #90EE90;
+}
+
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+#DIV1{
+	text-align: center;
+	width:100px;
+	line-height:5px;
+	padding:15px 0px;
+	border:1px green solid;
+	float:left;
+}
+
+#DIV2{
+	text-align: center;
+	width:100px;
+	line-height:5px;
+	padding:15px 0px;
+	border:1px green solid;
+	float:right;
+}
+
+#DIV3{
+	text-align: center;
+	width:200px;
+	line-height:5px;
+	padding:15px 0px;
+	border:0px green solid;
+	margin-left: -200px;
+	float:right;
+}
+
+canvas { 
+	background: gray; 
+}
+
