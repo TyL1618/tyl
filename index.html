@@ -3,10 +3,10 @@
 	<head>
 		<title>研究所資料搜尋系統</title>
 		<link rel="stylesheet" href="CSS.css">
-		<!--<marquee scrollamount="30" height="85" onMouseOver="this.stop()" onMouseOut="this.start()"><img  src="./K.jpg"></marquee>-->
 	</head>
 	<header>
 		<div class="container">
+			<h1 class="logo"></h1>
 			<nav>
 				<ul>
 				<li><a href="#">Home</a></li>
@@ -24,11 +24,6 @@
 	<script>
 		function renew(index)
 		{
-			/*
-			for(var i=0;i<department[index].length;i++)
-				document.myForm.second.options[i]=new Option(department[index][i], department[index][i]);
-			document.myForm.second.length=department[index].length;
-			*/
 			document.getElementById("professorcheck").style.display = "none";
 			document.getElementById("schoolcheck").style.display    = "none";
 			document.getElementById("infocheck").style.display      = "none";
@@ -86,7 +81,6 @@
 	<form name="myForm" id="myForm">
 		<tr>
 			<div class="center">
-				<!--<select name="first" onChange="renew(this.selectedIndex);">-->
 				<select id="first" name="first" onChange="renew(this.selectedIndex);">
 					<option value='select' selected disabled>選擇資訊</option>
 					<option id="teach"  value='teach' >師資資訊</option>
