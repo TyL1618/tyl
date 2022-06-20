@@ -68,13 +68,13 @@ p {
 }
 
 
+
 #DIV1{
 	text-align: center;
 	width:100px;
 	line-height:5px;
 	padding:15px 0px;
 	border:1px green solid;
-	margin-right: -112px;
 	float:left;
 }
 
@@ -84,7 +84,7 @@ p {
 	line-height:5px;
 	padding:15px 0px;
 	border:1px green solid;
-	float:center;
+	float:right;
 }
 
 #DIV3{
