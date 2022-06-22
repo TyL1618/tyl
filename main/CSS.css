@@ -44,9 +44,16 @@ p {
 	margin-right: auto;
 }
 
+.textcenter {
+	float: center;
+}
+
 .left {
-	margin: 0;
-	padding: 0;
+	float: left;
+}
+
+.right {
+	float: right;
 }
 
 
