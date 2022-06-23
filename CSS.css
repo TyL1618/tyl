@@ -14,12 +14,22 @@ txt {
 
 h1 {
 	text-align: center;
-	color: #90EE90;
+	color: white;
 }
 
 h2 {
 	text-align: center;
-	color: #90EE90;
+	color: white;
+}
+
+h3 {
+	text-align: center;
+	color: white;
+}
+
+h4 {
+	text-align: center;
+	color: white;
 }
 
 td {
