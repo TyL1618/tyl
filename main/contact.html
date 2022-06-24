@@ -32,7 +32,19 @@
 				<textarea name="Contact-Message" rows="6″ cols="20″>
 				</textarea><br><br> 
 				<button type="submit" value="Submit">Send</button>
-			</form> 
+			</form>
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
+			function sendEmail() {
+				Email.send({
+					SecureToken:"ec3201cb-ebe9-4ee2-9369-5d9966cc58dc",
+					To : 'tyl161803@gmail.com',
+					From : "tommyisboy08@gmail.com",
+					Subject : "This is the subject",
+					Body : "And this is the body"
+					}).then(
+						message => alert(message)
+				);
+			}
 		</div>
 	</body>
 </html>
