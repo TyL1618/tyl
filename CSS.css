@@ -1,4 +1,4 @@
-/* #########################################################網頁框架################################################################ */
+/* #########################################################電腦版框架################################################################ */
 body {
 	background-color: black;
 	-ms-overflow-style: none; /* for Internet Explorer, Edge */
@@ -113,13 +113,13 @@ canvas {
 }
 
 header {
-  background: #55d6aa;
+	background: #55d6aa;
 }
 
 header::after {
-  content: '';
-  display: table;
-  clear: both;
+	content: '';
+	display: table;
+	clear: both;
 }
 
 .logo {
@@ -138,13 +138,13 @@ img{
 }
 
 nav {
-  float: right;
+	float: right;
 }
 
 nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 nav li {
@@ -286,149 +286,97 @@ hr.split {
 /* #########################################################輸入文字特效################################################################ */
 
 .typing-txt-block {
-  height: 15vh;
-  display: block;
-  background-image: url("./bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+	height: 15vh;
+	display: block;
+	background-image: url("./bg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .typing-txt-block.bg-animation {
-  -webkit-animation: bg-animation 20s ease-in-out infinite;
-  animation: bg-animation 20s ease-in-out infinite;
+	-webkit-animation: bg-animation 20s ease-in-out infinite;
+	animation: bg-animation 20s ease-in-out infinite;
 }
 
 @keyframes bg-animation {
-  0% {
-    background-position: top;
-  }
-  50% {
-    background-position: bottom;
-  }
-  100% {
-    background-position: top;
-  }
+	0% {
+		background-position: top;
+	}
+	50% {
+		background-position: bottom;
+	}
+	100% {
+		background-position: top;
+	}
 }
 
 .typing-txt-block .container h1 {
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0;
-  letter-spacing: 5px;
-  color: transparent;
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 5px;
+	color: transparent;
 }
 
 .typing-txt-block .container h1::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  overflow: hidden;
-  border-right: 1px solid #ffffff;
-  animation: type 3s steps(18), blink 0.5s infinite alternate;
-  -webkit-animation: type 3s steps(18), blink 0.5s infinite alternate;
-  white-space: nowrap;
+	content: attr(data-text);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	overflow: hidden;
+	border-right: 1px solid #ffffff;
+	animation: type 3s steps(18), blink 0.5s infinite alternate;
+	-webkit-animation: type 3s steps(18), blink 0.5s infinite alternate;
+	white-space: nowrap;
 }
 
 @keyframes type {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
 }
 
 @keyframes blink {
-  from {
-    border-color: transparent;
-  }
-  to {
-    border-color: #ffffff;
-  }
-}
-/* #########################################################故障文字特效################################################################ */
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
-
-.container2 {
-  display: flex;
-/*   border:1px solid red; */
-  height: 100%;
-  align-items: center;
+	from {
+		border-color: transparent;
+	}
+	to {
+		border-color: #ffffff;
+	}
 }
 
-svg {
-    display: block;
-    font: 10.5em 'Montserrat';
-    width: 960px;
-    height: 200px;
-    margin: 0 auto;
-}
-
-.text-copy {
-    fill: none;
-    stroke: white;
-    stroke-dasharray: 6% 29%;
-    stroke-width: 5px;
-    stroke-dashoffset: 0%;
-    animation: stroke-offset 5.5s infinite linear;
-}
-
-.text-copy:nth-child(1){
-	stroke: #4D163D;
-	animation-delay: -1;
-}
-
-.text-copy:nth-child(2){
-	stroke: #840037;
-	animation-delay: -2s;
-}
-
-.text-copy:nth-child(3){
-	stroke: #BD0034;
-	animation-delay: -3s;
-}
-
-.text-copy:nth-child(4){
-	stroke: #BD0034;
-	animation-delay: -4s;
-}
-
-.text-copy:nth-child(5){
-	stroke: #FDB731;
-	animation-delay: -5s;
-}
-
-@keyframes stroke-offset{
-	100% {stroke-dashoffset: -35%;}
-}
 /* #########################################################RWD響應式頁面################################################################ */
-@media (min-width: 600px) {
-  .c2, .c3, .c4, .c5 {
-    width: 50%;
-  }
+@media (max-width: 576px)	{
+	.typing-txt-block .container h1	{
+		position: absolute;
+		top: 25px;
+		font-size:100%;
+	}
+	.typing-txt-block{
+		position: relative;
+		height: 45px;
+	}
+	nav li {
+		text-align: center;
+	}
+	nav ul {
+		display: none;
+		columns: 1;
+		-webkit-columns: 1;
+		-moz-columns: 1;
+	}
 }
 
-@media (min-width: 800px) {
-  .c1 {
-    width: 60%;
-  }
-  .c2 {
-    width: 40%;
-  }
-  .c3, .c4 {
-    width: 33%;
-  }
-  .c5 {
-    width: 34%;
-  }
-}
+
