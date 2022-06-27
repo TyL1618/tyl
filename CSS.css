@@ -21,8 +21,6 @@ txt {
 h1 {
 	text-align: center;
 	color: white;
-	margin: 75% auto;
-	font-family: DFKai-sb;
 }
 
 h2 {
@@ -62,6 +60,13 @@ th {
 p {
 	text-align: center;
 	color: #90EE90;
+}
+
+img{
+	width: auto;
+	height: auto;
+    max-width:50%;
+    max-height: 50%;
 }
 
 .center {
@@ -138,13 +143,6 @@ header::after {
 	width: 190px;
 	padding: 10px 0;
 	margin-left: -10%;
-    max-width:50%;
-    max-height: 50%;
-}
-
-img{
-	width: auto;
-	height: auto;
     max-width:50%;
     max-height: 50%;
 }
