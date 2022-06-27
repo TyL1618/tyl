@@ -21,6 +21,8 @@ txt {
 h1 {
 	text-align: center;
 	color: white;
+	margin: 75% auto;
+	font-family: DFKai-sb;
 }
 
 h2 {
@@ -38,6 +40,15 @@ h4 {
 	color: white;
 }
 
+h5 {
+	text-align: center;
+	color: white;
+}
+
+h6 {
+	text-align: center;
+	color: white;
+}
 td {
 	text-align: center;
 	color: #90EE90;
@@ -53,7 +64,6 @@ p {
 	color: #90EE90;
 }
 
-
 .center {
 	text-align: center;
 	margin-left: auto;
@@ -66,12 +76,12 @@ p {
 
 .left {
 	float: left;
-	margin-left: 10%;
+	margin-left: 15%;
 }
 
 .right {
 	float: right;
-	margin-right: 10%;
+	margin-right: 15%;
 }
 
 
@@ -128,6 +138,8 @@ header::after {
 	width: 190px;
 	padding: 10px 0;
 	margin-left: -10%;
+    max-width:50%;
+    max-height: 50%;
 }
 
 img{
@@ -439,6 +451,21 @@ svg {
 		width: 360px;
 		height: 100px;
 		margin: 0 auto;
+	}
+	h1 {
+		margin: 10% auto;
+	}
+	.left {
+		float: center;
+	}
+	.right {
+		float: center;
+	}
+	img{
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		max-height: 100%;
 	}
 }
 
