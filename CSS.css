@@ -4,6 +4,7 @@ body {
 	-ms-overflow-style: none; /* for Internet Explorer, Edge */
 	scrollbar-width: none; /* for Firefox */
 	overflow-y: scroll; 
+	overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -11,7 +12,7 @@ body::-webkit-scrollbar {
 }
 
 html {
-   height: 100 % ;
+	height: 100 % ;
 }
 
 txt {
@@ -346,11 +347,11 @@ svg {
 body
 {
     background-color: var(--dark-color);
+
 }
 body #solar-system
 {
     display: flex;
-
     width: 100vw;
     height: 70vh;
 
@@ -372,6 +373,7 @@ body #solar-system
 /* ⚠ size of the sun is not respected here */
 section #sun
 {
+
     position: fixed;
     z-index: 100;
     /* ✑ real radius of the sun: 696340km */
