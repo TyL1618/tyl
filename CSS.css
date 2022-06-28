@@ -70,6 +70,12 @@ img{
     max-height: 50%;
 }
 
+hr.split {
+    border: 0;
+    height: 6px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(255,255,255,0.75), rgba(0,0,0,0));
+}
+
 .center {
 	text-align: center;
 	margin-left: auto;
@@ -123,10 +129,36 @@ canvas {
 	background: gray; 
 }
 /* #########################################################上排列表################################################################ */
-.container {
+.showmenu{
+  display: none;
+}
+
+.container3 {
 	width: 80%;
 	margin: 0 auto;
 }
+
+.menu {
+	float:right;
+}
+
+.menu li {
+	float: left;
+	display: inline-block;
+	margin-left: 70px;
+	padding-top: 23px;
+	position: relative;
+}
+
+.menu li a {
+	display: block;
+	color: #444;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 25px;
+}
+
+
 
 header {
 	background: #55d6aa;
@@ -139,65 +171,61 @@ header::after {
 }
 
 .logo {
+
 	float: left;
   	height: 60px;
 	width: 190px;
 	padding: 10px 0;
-	margin-left: -10%;
+	margin-left: -5%;
     max-width:50%;
     max-height: 50%;
 }
 
-nav {
-	float: right;
-}
-
-nav ul {
+ol, ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-nav li {
-  display: inline-block;
-  margin-left: 70px;
-  padding-top: 23px;
-
-  position: relative;
+blockquote, q {
+  quotes: none;
 }
 
-nav a {
-  color: #444;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 25px;
-}
-
-nav a:hover {
-  color: #000;
-}
-
-nav a::before {
+blockquote:before, blockquote:after,
+q:before, q:after {
   content: '';
-  display: block;
-  height: 5px;
-  background-color: #444;
-
-  position: absolute;
-  top: 0;
-  width: 0%;
-
-  transition: all ease-in-out 250ms;
+  content: none;
 }
 
-nav a:hover::before {
-  width: 100%;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-hr.split {
-    border: 0;
-    height: 6px;
-    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(255,255,255,0.75), rgba(0,0,0,0));
+.menu li a::before {
+	content: '';
+	display: block;
+	height: 5px;
+	background-color: #444;
+
+	position: absolute;
+	top: 0;
+	width: 0%;
+
+	transition: all ease-in-out 250ms;
+}
+
+.menu li a:hover::before {
+	width: 100%;
+}
+
+.content{
+	padding: 1em;
+	line-height: 1.8;
+}
+
+.content p{
+	margin-bottom: 1em;
 }
 
 /* #########################################################蒙特賽拉特效################################################################ */
@@ -252,6 +280,11 @@ svg {
 	100% {stroke-dashoffset: -35%;}
 }
 /* #########################################################輸入文字特效################################################################ */
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
 
 .typing-txt-block {
 	height: 15vh;
@@ -816,7 +849,46 @@ smartphone*/
 
 
 /* #########################################################RWD響應式頁面################################################################ */
-@media (max-width: 576px)	{
+
+@media (max-width: 1106px) {
+/* #########################################################上排列表################################################################ */
+	.menu {
+	/*隱藏選單開始*/
+		max-height: 0px;
+		overflow: hidden;
+	/*隱藏選單結束*/
+		transition: max-height 2.3s;
+		margin-top: 1px;
+	/*絕對定位疊在網頁上*/
+		position: absolute;
+		z-index: 100;
+	/*header 80px+1px boder 線條*/
+		top: 81px;
+		left: 0;
+		right: 0;
+		background: #0F222B;
+	}
+	.menu li{
+		float: none;
+		border-bottom: 1px dashed #69CA62;
+	}
+	.menu li a{
+		transition: all 0.3s;
+	}
+	.menu li a:hover{
+		background: #69CA62;
+		color: #444;
+	}
+	.showmenu{
+		display: block;
+		float: right;
+		margin: 1em;
+	}
+	/*jQ點擊後動態在 body 加上 class */
+	.menu-show .menu{
+		max-height: 500px
+	}
+/* #########################################################其他################################################################ */
 	.typing-txt-block .container h1	{
 		position: absolute;
 		top: 25px;
@@ -825,15 +897,6 @@ smartphone*/
 	.typing-txt-block{
 		position: relative;
 		height: 45px;
-	}
-	nav li {
-		text-align: center;
-	}
-	nav ul {
-		display: none;
-		columns: 1;
-		-webkit-columns: 1;
-		-moz-columns: 1;
 	}
 	.container2 {
 		display: flex;
@@ -856,12 +919,7 @@ smartphone*/
 	.right {
 		float: center;
 	}
-	img{
-		width: auto;
-		height: auto;
-		max-width: 100%;
-		max-height: 100%;
-	}
+	
 }
 
 

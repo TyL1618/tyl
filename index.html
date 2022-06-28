@@ -6,32 +6,30 @@
 		<link rel="icon" type="image/x-icon" href="./icon.png">
 		<link rel="stylesheet" href="CSS.css">
 	</head>
-	<header>
-		<div class="container">
-			<img src="./tyl.png" class="logo"></img>
-			<nav>
-				<ul>
-					<li><a href="https://tyl1618.github.io/tyl/">Home</a></li>
-					<li><a href="https://tyl1618.github.io/tyl/main/about.html">About</a></li>
-					<li><a href="https://tyl1618.github.io/tyl/main/collections.html">Collections</a></li>
-					<li><a href="https://tyl1618.github.io/tyl/main/contact.html">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-
-<!--
-	<div id="DIV1">
-		<h3><font color="yellow">小遊戲</font></h3>
-		<button type="button"  onclick="window.open('./game/bricks.html', '_blank')">復古打磚塊</button>
-		<br><br><br><br>
-		<button type="button"  onclick="window.open('./game/tetris.html', '_blank')">俄羅斯方塊</button>
-		<br><br><br><br>
-		<button type="button"  onclick="window.open('./game/bomb.html', '_blank')">老王爆爆王</button>
-		<br><br><br><br>
-	</div>
--->
+		<!-- ------------------------------------------------------------------------------------ -->
 	<body>
+		<header>
+			<div class="container3">
+				<img src="./tyl.png" class="logo"></img>
+				<div>
+					<ul class="menu" >
+						<li><a href="https://tyl1618.github.io/tyl/">Home</a></li>
+						<li><a href="https://tyl1618.github.io/tyl/main/about.html">About</a></li>
+						<li><a href="https://tyl1618.github.io/tyl/main/collections.html">Collections</a></li>
+						<li><a href="https://tyl1618.github.io/tyl/main/contact.html">Contact</a></li>
+					</ul>
+					<div class="center"><a href="#" class="showmenu"><img src="./menu.png" style="max-height: 100%; max-width: 100%; width: 30px; height: 30px; padding: 30%;"></img></a></div>
+				</div>
+				<div class="content">
+			</div>
+		</header>
+		<script>
+			$('.showmenu').on('click', function(e){
+			  e.preventDefault();
+			  $('body').toggleClass('menu-show');
+			});
+		</script>
+		<!-- ------------------------------------------------------------------------------------ -->
 		<hr align="center" width="70%" class="split"></hr>
 			<div class="typing-txt-block bg-animation">
 				<div class="container">
