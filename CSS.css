@@ -345,8 +345,6 @@ svg {
 
 body
 {
-    overflow: hidden;
-
     background-color: var(--dark-color);
 }
 body #solar-system
