@@ -66,8 +66,8 @@ p {
 img{
 	width: auto;
 	height: auto;
-    max-width:50%;
-    max-height: 50%;
+    max-width:100%;
+    max-height: 100%;
 }
 
 hr.split {
@@ -88,12 +88,12 @@ hr.split {
 
 .left {
 	float: left;
-	margin-left: 15%;
+	margin-left: 0%;
 }
 
 .right {
 	float: right;
-	margin-right: 15%;
+	margin-right: 0%;
 }
 
 
@@ -855,7 +855,7 @@ smartphone*/
 	.menu {
 	/*隱藏選單開始*/
 		max-height: 0px;
-		overflow: hidden;
+		overflow: hidden	;
 	/*隱藏選單結束*/
 		transition: max-height 2.3s;
 		margin-top: 1px;
@@ -918,6 +918,9 @@ smartphone*/
 	}
 	.right {
 		float: center;
+	}
+	hr.split {
+		align: center;
 	}
 	
 }

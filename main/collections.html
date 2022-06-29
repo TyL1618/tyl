@@ -8,6 +8,12 @@
 	</head>
 		<!-- ------------------------------------------------------------------------------------ -->
 	<body>
+		<script>
+			$('.showmenu').on('click', function(e){
+				e.preventDefault();
+				$('body').toggleClass('menu-show');
+			});
+		</script>
 		<header>
 			<div class="container3">
 				<img src="../tyl.png" class="logo"></img>
@@ -18,7 +24,7 @@
 						<li><a href="https://tyl1618.github.io/tyl/main/collections.html">Collections</a></li>
 						<li><a href="https://tyl1618.github.io/tyl/main/contact.html">Contact</a></li>
 					</ul>
-					<a href="#" class="showmenu">menu</a>
+					<div class="center"><a href="#" class="showmenu"><img src="../menu.png" style="max-height: 100%; max-width: 100%; width: 30px; height: 30px; padding: 30%;"></img></a></div>
 				</div>
 				<div class="content">
 			</div>
@@ -26,12 +32,12 @@
 		<hr align="center" width="70%" class="split"></hr>
 		<!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
 		<div>
-			<div style="margin:0% auto">
-				<img align="left" border="0" src="./sdesD.png"></img>
+			<div class="left">
+				<img border="0" src="./sdesD.png"></img>
 			</div>
-			<div>
+			<div class="right">
 				<a href="https://tyl1618.github.io/tyl/main/collections/s-des.html" target="_blank">
-					<img align="right" border="0" src="./sdes.png"></img>
+					<img border="0" src="./sdes.png"></img>
 				</a>
 			</div>
 			<hr align="right" width="70%" class="split"></hr>

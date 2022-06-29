@@ -8,6 +8,12 @@
 	</head>
 		<!-- ------------------------------------------------------------------------------------ -->
 	<body>
+		<script>
+			$('.showmenu').on('click', function(e){
+				e.preventDefault();
+				$('body').toggleClass('menu-show');
+			});
+		</script>
 		<header>
 			<div class="container3">
 				<img src="./tyl.png" class="logo"></img>
@@ -23,12 +29,7 @@
 				<div class="content">
 			</div>
 		</header>
-		<script>
-			$('.showmenu').on('click', function(e){
-			  e.preventDefault();
-			  $('body').toggleClass('menu-show');
-			});
-		</script>
+
 		<!-- ------------------------------------------------------------------------------------ -->
 		<hr align="center" width="70%" class="split"></hr>
 			<div class="typing-txt-block bg-animation">
