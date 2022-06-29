@@ -234,11 +234,12 @@ table {
 	height: 100%;
 	align-items: center;
 }
+
 svg {
     display: block;
-    font: 10.5em 'Montserrat';
+    font: 15em 'Montserrat';
     width: 960px;
-    height: 300px;
+    height: 200px;
     margin: 0 auto;
 }
 
@@ -898,11 +899,7 @@ smartphone*/
 		position: relative;
 		height: 45px;
 	}
-	.container2 {
-		display: flex;
-		height: 100%;
-		align-items: center;
-	}
+
 	svg {
 		display: block;
 		font: 10.5em 'Montserrat';
