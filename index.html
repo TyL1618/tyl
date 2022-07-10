@@ -7,15 +7,14 @@
 		<link rel="stylesheet" href="CSS.css">
 		
 		<script src="yui-min.js"></script>
-		<script src="rubik-simple.js"></script>
+		<script src="rubik.js"></script>
 		<script>
-		YUI().use('node','rubik-simple',function(Y){
-			var cube = window.cube = new Y.Rubik();
-			cube._disabledFLick = true;
-			cube.run();    
-		});
+			YUI().use('node','rubik-simple',function(Y){
+				var cube = window.cube = new Y.Rubik();
+				cube._disabledFLick = true;
+				cube.run();    
+			});
 		</script>
-
 	</head>
 		<!-- ------------------------------------------------------------------------------------ -->
 	<body>
@@ -69,7 +68,6 @@
 		</section>
 	<!-- ------------------------------------------------------------------------------------ -->
 
-	
 	<section id="rubik">
 		<div id="cube-container" >
 			<div id="cube-viewport">
@@ -163,22 +161,22 @@
 				<input type="button" value="UE">
 				<input type="button" value="DE">
 		</p>
+		
 		<p>Allow flicks (let you play with the mouse) <input id="plane" type="checkbox" onclick="toggleFlick()"></p>
-	</p>
-	<script>
-		document.querySelector('#control').addEventListener("click", inputClick, false);
-		function inputClick(e){
-			var move = e.target.value;
-			if(move && move!== 'on'){
-				move = move.split('');
-				cube._expectingTransition = true;
-				cube._doMovement({face: move[0], slice: move[1],rotate: 'right'});
+		<script>
+			document.querySelector('#control').addEventListener("click", inputClick, false);
+			function inputClick(e){
+				var move = e.target.value;
+				if(move && move!== 'on'){
+					move = move.split('');
+					cube._expectingTransition = true;
+					cube._doMovement({face: move[0], slice: move[1],rotate: 'right'});
+				}
 			}
-		}
-		function toggleFlick(){
-			cube._disabledFLick = cube._disabledFLick ? false : true;
-		}
-	</script>
+			function toggleFlick(){
+				cube._disabledFLick = cube._disabledFLick ? false : true;
+			}
+		</script>
 	</section>
 	
 	<!-- ------------------------------------------------------------------------------------ -->
