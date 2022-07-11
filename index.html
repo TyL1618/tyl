@@ -6,15 +6,6 @@
 		<link rel="icon" type="image/x-icon" href="./icon.png">
 		<link rel="stylesheet" href="CSS.css">
 		
-		<script src="./yui-min.js"></script>
-		<script src="./rubik-simple.js"></script>
-		<script>
-			YUI().use('node','rubik-simple',function(Y){
-				var cube = window.cube = new Y.Rubik();
-				cube._disabledFLick = true;
-				cube.run();    
-			});
-		</script>
 	</head>
 		<!-- ------------------------------------------------------------------------------------ -->
 	<body>
@@ -67,7 +58,15 @@
 			</article>
 		</section>
 	<!-- ------------------------------------------------------------------------------------ -->
-
+	<script src="yui-min.js"></script>
+	<script src="rubik-simple.js"></script>
+	<script>
+		YUI().use('node','rubik-simple',function(Y){
+			var cube = window.cube = new Y.Rubik();
+			cube._disabledFLick = true;
+			cube.run();    
+		});
+	</script>
 	<section id="rubik">
 		<div id="cube-container" >
 			<div id="cube-viewport">
